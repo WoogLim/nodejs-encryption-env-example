@@ -26,6 +26,8 @@ const CommentSchema = new mongoose.Schema({
   updatedAt: {
     type: Date,
   }
+},{
+  versionKey: false
 })
 
 // 가상의 컬럼 추가 

@@ -17,6 +17,8 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   }
+},{
+  versionKey: false
 })
 
 // 가상의 컬럼 추가 
