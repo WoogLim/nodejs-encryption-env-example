@@ -19,7 +19,7 @@ new Promise(async (resolve, reject) => {
     const salt = await createSalt();
     crypto.pbkdf2(plainPassword, salt, Number(process.env.SALT_ITERATIONS_CNT), Number(process.env.SALT_SET_BYTE), process.env.ENCRYPT_SET_ALGORITHM, (err, key) => {
         if (err) reject(err);
-        resolve({ hashedPassword: key.toString('base64'), salt });
+        resolve({ hashedPassword: key.toString(process.env.SALT_SET_ALGORITHM), salt });
     });
 });
 
